@@ -4,8 +4,9 @@ import lombok.Data;
 
 @Data
 public class ChatMessage {
-    private String sender;
+    private String type;
     private String groupId;
+    private String sender;
     private String content;
-    private String timestamp;
+    private String time;
 }

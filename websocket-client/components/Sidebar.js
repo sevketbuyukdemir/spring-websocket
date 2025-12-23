@@ -1,6 +1,7 @@
 import styles from "./Sidebar.module.css";
 
 export default function Sidebar({
+  username,
   groups,
   currentGroup,
   onGroupSelect,
@@ -15,7 +16,7 @@ export default function Sidebar({
             <div className={styles.onlineIndicator}></div>
           </div>
           <div>
-            <div className={styles.profileName}>My Profile</div>
+            <div className={styles.profileName}>{username}</div>
             <div className={styles.status}>Online</div>
           </div>
         </div>

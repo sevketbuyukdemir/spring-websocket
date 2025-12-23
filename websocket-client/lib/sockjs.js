@@ -14,6 +14,10 @@ export const connect = (groupId, onMessageReceived) => {
     () => {
       console.log("Connected to WebSocket");
       stompClient.subscribe(
+        `${config.destinationPrefix}broadcast`,
+        onMessageReceived
+      );
+      stompClient.subscribe(
         `${config.destinationPrefix}${groupId}`,
         onMessageReceived
       );
@@ -29,10 +33,22 @@ export const sendMessage = (groupId, message) => {
     `/app/chat.send`,
     {},
     JSON.stringify({
+      type: "MESSAGE",
       groupId: groupId,
       sender: message.author,
       content: message.text,
       time: message.time,
+    })
+  );
+};
+
+export const broadcast = (type, body) => {
+  stompClient.send(
+    `/app/chat.broadcast`,
+    {},
+    JSON.stringify({
+      type: type,
+      content: body,
     })
   );
 };

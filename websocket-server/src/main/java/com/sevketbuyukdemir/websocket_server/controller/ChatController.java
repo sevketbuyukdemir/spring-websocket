@@ -19,6 +19,11 @@ public class ChatController {
 
     private Map<String, Set<String>> groupUsers = new ConcurrentHashMap<>();
 
+    @MessageMapping("/chat.broadcast")
+    public void broadcast(@Payload ChatMessage chatMessage) {
+        messagingTemplate.convertAndSend("/topic/group/broadcast", chatMessage);
+    }
+
     @MessageMapping("/chat.send")
     public void sendMessage(@Payload ChatMessage chatMessage) {
         String groupId = chatMessage.getGroupId();
