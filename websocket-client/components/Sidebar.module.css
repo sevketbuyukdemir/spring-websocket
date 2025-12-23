@@ -1,0 +1,197 @@
+.sidebar {
+  width: 20%;
+  border-right: 1px solid #e5e7eb;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  flex-shrink: 0;
+}
+
+.dark .sidebar {
+  border-right-color: #374151;
+  background: #151f29;
+}
+
+.profileHeader {
+  padding: 1rem 1.25rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 1rem;
+}
+
+.dark .profileHeader {
+  border-bottom-color: rgba(55, 65, 81, 0.5);
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.onlineIndicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.dark .onlineIndicator {
+  border-color: #151f29;
+}
+
+.profileName {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.status {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.dark .status {
+  color: #9ca3af;
+}
+
+.newGroupBtn {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #2b8cee;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(59, 130, 246, 0.2);
+  transition: all 0.2s;
+}
+
+.newGroupBtn:hover {
+  background: #2563eb;
+}
+
+.groupsList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 0.5rem;
+}
+
+.groupItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: all 0.2s;
+  margin-bottom: 0.25rem;
+}
+
+.groupItem:hover {
+  background: #f9fafb;
+}
+
+.dark .groupItem:hover {
+  background: #1e2832;
+}
+
+.activeGroup {
+  background: rgba(43, 140, 238, 0.1);
+  border-left-color: #2b8cee;
+}
+
+.groupAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  flex-shrink: 0;
+}
+
+.groupInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.groupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.125rem;
+}
+
+.groupName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.groupTime {
+  font-size: 0.625rem;
+  color: #2b8cee;
+  font-weight: 500;
+}
+
+.groupPreview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.groupPreview > span:first-child {
+  font-size: 0.75rem;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 0.5rem;
+}
+
+.dark .groupPreview > span:first-child {
+  color: #d1d5db;
+}
+
+.unreadBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #2b8cee;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+}

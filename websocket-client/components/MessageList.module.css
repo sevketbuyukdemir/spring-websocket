@@ -1,0 +1,28 @@
+.messageList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dateDivider {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.dateDivider span {
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 0.625rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.dark .dateDivider span {
+  background: #1e2832;
+  color: #9ca3af;
+}

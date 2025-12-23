@@ -1,0 +1,120 @@
+.inputArea {
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .inputArea {
+  background: #101922;
+  border-top-color: #374151;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  background: #f3f4f6;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.inputContainer:focus-within {
+  border-color: rgba(43, 140, 238, 0.5);
+  box-shadow: 0 0 0 1px rgba(43, 140, 238, 0.5);
+}
+
+.dark .inputContainer {
+  background: #1e2832;
+}
+
+.attachBtn,
+.emojiBtn {
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.attachBtn:hover,
+.emojiBtn:hover {
+  color: #475569;
+  background: #e5e7eb;
+}
+
+.dark .attachBtn:hover,
+.dark .emojiBtn:hover {
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  resize: none;
+  padding: 0.625rem 0;
+  max-height: 8rem;
+  overflow-y: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.25rem;
+  padding-bottom: 0.125rem;
+}
+
+.sendBtn {
+  padding: 0.5rem;
+  background: #2b8cee;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(43, 140, 238, 0.2);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sendBtn span {
+  font-size: 1.25rem;
+  margin-left: 0.125rem;
+}
+
+.inputHint {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.inputHint,
+.dark .inputHint {
+  color: #9ca3af;
+  font-size: 0.625rem;
+}

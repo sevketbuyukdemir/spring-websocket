@@ -24,14 +24,15 @@ export const connect = (groupId, onMessageReceived) => {
   );
 };
 
-export const sendMessage = (groupId, userId, message) => {
+export const sendMessage = (groupId, message) => {
   stompClient.send(
     `/app/chat.send`,
     {},
     JSON.stringify({
-      sender: userId,
-      content: message,
       groupId: groupId,
+      sender: message.author,
+      content: message.text,
+      time: message.time,
     })
   );
 };

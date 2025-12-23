@@ -1,0 +1,92 @@
+.messageGroup {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.incoming {
+  align-items: flex-start;
+}
+
+.outgoing {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.incoming .avatar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.outgoing .avatar {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 0 0 2px rgba(43, 140, 238, 0.2);
+}
+
+.bubbleContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+@media (min-width: 768px) {
+  .bubbleContainer {
+    max-width: 60%;
+  }
+}
+
+.messageHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.author {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.time {
+  font-size: 0.625rem;
+  color: #6b7280;
+}
+
+.dark .time {
+  color: #9ca3af;
+}
+
+.bubble {
+  padding: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.incomingBubble {
+  background: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-top-left-radius: 0.25rem;
+}
+
+.dark .incomingBubble {
+  background: #1e2832;
+  color: #f9fafb;
+  border-color: #374151;
+}
+
+.outgoingBubble {
+  background: #2b8cee;
+  color: white;
+  border-top-right-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(43, 140, 238, 0.2);
+}
