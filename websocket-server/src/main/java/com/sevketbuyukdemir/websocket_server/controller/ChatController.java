@@ -2,6 +2,7 @@ package com.sevketbuyukdemir.websocket_server.controller;
 
 import com.sevketbuyukdemir.websocket_server.model.ChatMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
@@ -17,17 +18,20 @@ public class ChatController {
     @Autowired
     private SimpMessagingTemplate messagingTemplate;
 
+    @Value("${websocket.destination.prefix:/topic/group}")
+    private String destinationPrefix;
+
     private Map<String, Set<String>> groupUsers = new ConcurrentHashMap<>();
 
     @MessageMapping("/chat.broadcast")
     public void broadcast(@Payload ChatMessage chatMessage) {
-        messagingTemplate.convertAndSend("/topic/group/broadcast", chatMessage);
+        messagingTemplate.convertAndSend(destinationPrefix + "broadcast", chatMessage);
     }
 
     @MessageMapping("/chat.send")
     public void sendMessage(@Payload ChatMessage chatMessage) {
         String groupId = chatMessage.getGroupId();
-        messagingTemplate.convertAndSend("/topic/group/" + groupId, chatMessage);
+        messagingTemplate.convertAndSend(destinationPrefix + groupId, chatMessage);
     }
 
     @MessageMapping("/chat.addUser")
@@ -42,6 +46,6 @@ public class ChatController {
         ChatMessage joinMsg = new ChatMessage();
         joinMsg.setSender(username);
         joinMsg.setContent("joined the group");
-        messagingTemplate.convertAndSend("/topic/group/" + groupId, joinMsg);
+        messagingTemplate.convertAndSend(destinationPrefix + groupId, joinMsg);
     }
 }

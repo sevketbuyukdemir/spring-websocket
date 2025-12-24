@@ -25,5 +25,8 @@
             <AppenderRef ref="Console" />
         </Root>
         <!-- Log files -->
+        <Logger name="com.sevketbuyukdemir.websocket_server.controller.ChatErrorHandler" level="info" additivity="false">
+            <AppenderRef ref="LogFile"/>
+        </Logger>
     </Loggers>
 </Configuration>
